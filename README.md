@@ -1,15 +1,20 @@
-# MetaPosters.ai - AI-Powered Poster Art Store
+# Image Analysis and Metadata Generator
 
-A sophisticated system for analyzing and generating metadata for poster images using state-of-the-art AI models.
+A Python-based tool for analyzing images and generating structured metadata in CSV format. This tool processes images to extract meaningful information and organizes it into a structured format for easy integration with other systems.
 
 ## Features
 
-- **Advanced Image Analysis**: Utilizes the RAM (Recognize Anything Model) for comprehensive image understanding
-- **Intelligent Tagging**: Automatically generates relevant tags and categories
-- **Scene Classification**: Identifies scene types (indoor, outdoor, abstract, etc.)
-- **Cohesion Scoring**: Evaluates image composition and visual harmony
-- **Metadata Generation**: Creates SEO-optimized titles, descriptions, and alt text
-- **CSV Export**: Saves all metadata in a structured format for easy integration
+- **Image Analysis**: Processes images to extract visual features and characteristics
+- **Metadata Generation**: Creates structured data including:
+  - Image titles
+  - Alt text descriptions
+  - SEO-optimized descriptions
+  - Scene classification (indoor, outdoor, abstract, etc.)
+  - Visual cohesion scores
+  - Relevant tags and categories
+- **CSV Export**: Saves all generated metadata in a structured CSV format
+- **Batch Processing**: Handles multiple images in a single run
+- **Progress Tracking**: Shows real-time progress of image processing
 
 ## Requirements
 
@@ -22,8 +27,8 @@ A sophisticated system for analyzing and generating metadata for poster images u
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/poster-automation.git
-cd poster-automation
+git clone https://github.com/tatianathevisionary/poster-analysis.git
+cd poster-analysis
 ```
 
 2. Create and activate a virtual environment:
@@ -44,7 +49,7 @@ python test_installation.py
 
 ## Usage
 
-1. Place your poster images in the `input/` directory
+1. Place your images in the `input/` directory
 2. Run the analysis script:
 ```bash
 python inference_ram.py
@@ -54,10 +59,21 @@ python inference_ram.py
 - Generated metadata will be saved in `output/metadata.csv`
 - Logs are available in `poster_analysis.log`
 
+## CSV Output Format
+
+The generated CSV file (`output/metadata.csv`) includes the following columns:
+- `image_path`: Path to the processed image
+- `title`: Generated title for the image
+- `alt_text`: Descriptive alt text for accessibility
+- `seo_description`: SEO-optimized description
+- `tags`: Comma-separated list of relevant tags
+- `scene_type`: Classification of the scene (indoor, outdoor, abstract, etc.)
+- `cohesion_score`: Numerical score indicating visual harmony (0-1)
+
 ## Directory Structure
 
 ```
-poster-automation/
+poster-analysis/
 ├── input/              # Place your images here
 ├── output/             # Generated metadata and results
 ├── ram/               # RAM model files
@@ -68,17 +84,6 @@ poster-automation/
 ├── README.md
 └── LICENSE
 ```
-
-## Output Format
-
-The generated CSV file includes:
-- Image path
-- Generated title
-- Alt text
-- SEO description
-- Tags
-- Scene type
-- Cohesion score
 
 ## Contributing
 
